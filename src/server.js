@@ -1,6 +1,7 @@
 const express = require('express');
 const Client = require('ftp');
 const serveIndex = require('serve-index');
+const logger = require('./serverlog');
 const app = express();
 const port = 3000;
 
@@ -20,6 +21,9 @@ ftp.on('ready', () => {
     listFtp = list;
   });
 });
+
+// Logger
+app.use(logger);
 
 // The express.static serves the file contents
 // The serveIndex is this module serving the directory
