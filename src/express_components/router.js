@@ -5,7 +5,8 @@ const serveIndex = require('serve-index');
 
 const camDir = 'd:/camera';
 const filmDir = 'd:/film';
-const httpDir = `${__dirname}/../../dist/`;
+const vueDir = `${__dirname}/../../dist/`;
+const htmlDir = `${__dirname}/../../test-request/`;
 
 const ftpInfo = {
     user: 'film',
@@ -23,11 +24,14 @@ ftp.on('ready', () => {
 });
 
 // Vue frontend
-router.use('/', express.static(httpDir));
+router.use('/', express.static(vueDir));
+
+// Test page
+router.use('/html', express.static(htmlDir));
 
 // Send file to display on browser
 // Download tags Content-Disposition: attachment to Save As
-router.get('/exp', (req, res) => {
+router.get('/cam', (req, res) => {
     const fileTest = `${camDir}/20210101_000149.jpg`;
     res.sendFile(fileTest);
 });
@@ -39,6 +43,6 @@ router.get('/pjmasks', (req, res) => {
 
 // The express.static serves the file contents
 // The serveIndex is this module serving the directory
-router.use('/cam', express.static(camDir), serveIndex(camDir));
+router.use('/camdir', express.static(camDir), serveIndex(camDir));
 
 module.exports = router;

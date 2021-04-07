@@ -1,6 +1,6 @@
 const express = require('express');
-const logger = require('./express_components/serverlog');
-const route = require('./express_components/serverroute');
+const logger = require('./express_components/logger');
+const router = require('./express_components/router');
 const app = express();
 const port = 3000;
 
@@ -8,7 +8,7 @@ const port = 3000;
 app.use(logger);
 
 // Router
-app.use(route);
+app.use(router);
 
 // Starting server
 app.listen(port, () => {
