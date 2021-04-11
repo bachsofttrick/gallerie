@@ -1,3 +1,3 @@
 # Gallerie
 Web App for displaying picture.
-Running with MEVN stack.
+Running with MySQL, Express, Vue.
