@@ -7,4 +7,17 @@
     margin: 0px 2px;
 }
 
+.to-top {
+    display: block;
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px;  /* Place the button at the bottom of the page */
+    right: 20px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    cursor: pointer; /* Add a mouse pointer on hover */
+}
+
+.to-top button {
+    font-size: 18px;
+}
+
 

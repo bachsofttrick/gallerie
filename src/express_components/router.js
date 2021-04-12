@@ -29,6 +29,11 @@ router.use('/', express.static(vueDir));
 // Test page
 router.use('/html', express.static(htmlDir));
 
+// Test api
+router.route('/api').get((req, res) => {
+    res.json(req.query);
+})
+
 // Send file to display on browser
 // Download tags Content-Disposition: attachment to Save As
 router.get('/cam', (req, res) => {
