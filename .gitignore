@@ -104,4 +104,6 @@ dist
 .tern-port
 
 # Custom folders
-test-request/
+test-request/media
+test-request/picture
+test-request/thumbnail
